@@ -35,39 +35,95 @@ var heroIdle;
 var heroIdleAnimation;
 var heroIdleFrames = [
   {'name':'HeroIdle01','frame':{'x':1536,'y':256,'width':256,'height':256}},
-  {'name':'HeroIdle01','frame':{'x':1792,'y':256,'width':256,'height':256}},
-  {'name':'HeroIdle01','frame':{'x':2048,'y':256,'width':256,'height':256}},
-  {'name':'HeroIdle01','frame':{'x':2304,'y':256,'width':256,'height':256}},
-  {'name':'HeroIdle01','frame':{'x':2560,'y':256,'width':256,'height':256}},
-  {'name':'HeroIdle01','frame':{'x':2816,'y':256,'width':256,'height':256}},
-  {'name':'HeroIdle01','frame':{'x':0,'y':512,'width':256,'height':256}},
-  {'name':'HeroIdle01','frame':{'x':256,'y':512,'width':256,'height':256}},
-  {'name':'HeroIdle01','frame':{'x':512,'y':512,'width':256,'height':256}},
-  {'name':'HeroIdle01','frame':{'x':768,'y':512,'width':256,'height':256}},
-  {'name':'HeroIdle01','frame':{'x':1024,'y':512,'width':256,'height':256}},
-  {'name':'HeroIdle01','frame':{'x':1280,'y':512,'width':256,'height':256}},
-  {'name':'HeroIdle01','frame':{'x':1536,'y':512,'width':256,'height':256}},
-  {'name':'HeroIdle01','frame':{'x':1792,'y':512,'width':256,'height':256}},
-  {'name':'HeroIdle01','frame':{'x':2048,'y':512,'width':256,'height':256}},
-  {'name':'HeroIdle01','frame':{'x':2304,'y':512,'width':256,'height':256}},
-  {'name':'HeroIdle01','frame':{'x':2560,'y':512,'width':256,'height':256}},
-  {'name':'HeroIdle01','frame':{'x':2816,'y':512,'width':256,'height':256}},
+  {'name':'HeroIdle02','frame':{'x':1792,'y':256,'width':256,'height':256}},
+  {'name':'HeroIdle03','frame':{'x':2048,'y':256,'width':256,'height':256}},
+  {'name':'HeroIdle04','frame':{'x':2304,'y':256,'width':256,'height':256}},
+  {'name':'HeroIdle05','frame':{'x':2560,'y':256,'width':256,'height':256}},
+  {'name':'HeroIdle06','frame':{'x':2816,'y':256,'width':256,'height':256}},
+  {'name':'HeroIdle07','frame':{'x':0,'y':512,'width':256,'height':256}},
+  {'name':'HeroIdle08','frame':{'x':256,'y':512,'width':256,'height':256}},
+  {'name':'HeroIdle09','frame':{'x':512,'y':512,'width':256,'height':256}},
+  {'name':'HeroIdle10','frame':{'x':768,'y':512,'width':256,'height':256}},
+  {'name':'HeroIdle11','frame':{'x':1024,'y':512,'width':256,'height':256}},
+  {'name':'HeroIdle12','frame':{'x':1280,'y':512,'width':256,'height':256}},
+  {'name':'HeroIdle13','frame':{'x':1536,'y':512,'width':256,'height':256}},
+  {'name':'HeroIdle14','frame':{'x':1792,'y':512,'width':256,'height':256}},
+  {'name':'HeroIdle15','frame':{'x':2048,'y':512,'width':256,'height':256}},
+  {'name':'HeroIdle16','frame':{'x':2304,'y':512,'width':256,'height':256}},
+  {'name':'HeroIdle17','frame':{'x':2560,'y':512,'width':256,'height':256}},
+  {'name':'HeroIdle18','frame':{'x':2816,'y':512,'width':256,'height':256}},
 ];
 
 var heroRight;
 var heroRightAnimation;
 var heroRightFrames = [
-  {'name':'HeroRight01','frame':{'x':
+  {'name':'HeroRight01','frame':{'x':0,'y':768,'width':256,'height':256}},
+  {'name':'HeroRight02','frame':{'x':256,'y':768,'width':256,'height':256}},
+  {'name':'HeroRight03','frame':{'x':512,'y':768,'width':256,'height':256}},
+  {'name':'HeroRight04','frame':{'x':768,'y':768,'width':256,'height':256}},
+  {'name':'HeroRight05','frame':{'x':1024,'y':768,'width':256,'height':256}},
+  {'name':'HeroRight06','frame':{'x':1280,'y':768,'width':256,'height':256}},
+  {'name':'HeroRight07','frame':{'x':1536,'y':768,'width':256,'height':256}},
+  {'name':'HeroRight08','frame':{'x':1792,'y':768,'width':256,'height':256}}
+];
+
+var heroLeft;
+var heroLeftAnimation;
+var heroLeftFrames = [
+  {'name':'HeroLeft01','frame':{'x':2048,'y':768,'width':256,'height':256}},
+  {'name':'HeroLeft01','frame':{'x':2304,'y':768,'width':256,'height':256}},
+  {'name':'HeroLeft01','frame':{'x':2560,'y':768,'width':256,'height':256}},
+  {'name':'HeroLeft01','frame':{'x':2816,'y':768,'width':256,'height':256}},
+  {'name':'HeroLeft01','frame':{'x':0,'y':1024,'width':256,'height':256}},
+  {'name':'HeroLeft01','frame':{'x':256,'y':1024,'width':256,'height':256}},
+  {'name':'HeroLeft01','frame':{'x':512,'y':1024,'width':256,'height':256}},
+  {'name':'HeroLeft01','frame':{'x':768,'y':1024,'width':256,'height':256}}
+  ];
+  
+var bulletAnimation;
+var bulletCycle = [
+  {'name':'HeroLeft01','frame':{'x':2048,'y':1024,'width':256,'height':256}},
+  {'name':'HeroLeft01','frame':{'x':2304,'y':1024,'width':256,'height':256}},
+  {'name':'HeroLeft01','frame':{'x':2560,'y':1024,'width':256,'height':256}},
+  {'name':'HeroLeft01','frame':{'x':2816,'y':1024,'width':256,'height':256}},
 ];
 
 var enemyRate1 = 100;
 var enemies;
+var enemiesTwo;
+var enemiesThree;
 var enemy;
 var enemyAngle = 30
 var gameState = 'startUp';
 
+var titleScreen;
+
+var levelOnebg;
+var levelTwobg;
+var levelThreebg;
+
+var countDownOne;
+var countDownTwo;
+var countDownThree;
+
+var youWin;
+var youLose;
+
+var shootSound;
+var title;
+var levelOneMusic;
+var levelTwoMusic;
+var levelThreeMusic;
+var winMusic;
+var loseMusic;
+var heroDamage;
+var heroDeath;
+var wormyHit;
+var batHit;
+var skellyHit;
+
 var hero;
-var heroSpeed = 8;
+var heroSpeed = 15;
 var bg;
 var frame;
 //the scene is twice the size of the canvas
@@ -98,11 +154,49 @@ function preload(){
   skellyAnimation = loadSpriteSheet('assets/TOPDOWNSPRITESHEET.png',skellyAnimationFrames);
   heroIdleAnimation = loadSpriteSheet('assets/TOPDOWNSPRITESHEET.png',heroIdleFrames);
   heroRightAnimation = loadSpriteSheet('assets/TOPDOWNSPRITESHEET.png',heroRightFrames);
+  heroLeftAnimation = loadSpriteSheet('assets/TOPDOWNSPRITESHEET.png',heroLeftFrames);
+  bulletAnimation = loadSpriteSheet('assets/TOPDOWNSPRITESHEET.png',bulletCycle);
+  
+  titleScreen = loadImage('assets/TitleTop.png');
+  
+  countDownOne = loadImage('assets/countdownOneTOP.png');
+  countDownTwo = loadImage('assets/countdownTwoTOP.png');
+  countDownThree = loadImage('assets/countdownThreeTOP.png');
+  
+  
+  levelOnebg = loadImage('assets/LevelOneTOP.png');
+  levelTwobg = loadImage('assets/LevelTwoTOP.png');
+  levelThreebg = loadImage('assets/LevelThreeTOP.png');
+  
+  youWin = loadImage('assets/YouWinTOP.png');
+  youLose = loadImage('assets/YouLoseTOP.png');
+  
+  //bullet sound
+  shootSound = loadSound('assets/Bullet.mp3')
+  
+  //music
+  title = loadSound('assets/TitleScreenTOP.wav');
+  levelOneMusic = loadSound('assets/LevelOneMusicTOP.mp3');
+  levelTwoMusic = loadSound('assets/LevelTWOTOP.mp3');
+  levelThreeMusic = loadSound('assets/LevelThreeTOP.mp3');
+  winMusic = loadSound('assets/YouWinTOP.mp3');
+  loseMusic = loadSound('assets/YouLoseTOP.mp3');
+  
+  //sounds!!!
+  heroDamage = loadSound('assets/HeroHit.mp3');
+  //heroDeath = loadSound('assets/HeroDeath.mp3');
+  
+  batHit = loadSound('assets/BatFriendHit.mp3');
+  wormyHit = loadSound('assets/WormyHit.mp3');
+  skellyHit = loadSound('assets/SkellyHit.mp3');
 }
 
 function setup() {
   createCanvas(800,400);
+    title.loop();
    enemies = new Group();
+   enemiesTwo = new Group();
+   enemiesThree = new Group();
    bullets = new Group();
   //create a sprite and add the 3 animations
   hero = createSprite(400, 200, 50, 100);
@@ -110,8 +204,9 @@ function setup() {
   hero.addAnimation('idle',heroIdleAnimation);
   hero.addAnimation('left',heroLeftAnimation);
   hero.addAnimation('right',heroRightAnimation);
-  
+  hero.setCollider('rectangle',0,0,140,250);
   hero.friction = .89;
+  //hero.debug = true;
   
   
 }
@@ -120,27 +215,31 @@ function draw() {
   
   switch(gameState){
     case 'startUp':
-      background(0);
+      image(titleScreen,0,0);
       fill('white');
-      text('Press X to Begin',width/2,height/2);
+      //text('Press X to Begin',width/2,height/2);
     break;
     
     case 'win':
-      background(0);
+      image(youWin,0,0);
       fill('white');
       textSize(25);
-      text('You Won!',width/2,height/2);
+      levelThreeMusic.stop();
+      //text('You Won!',width/2,height/2);
     break;
     
     case 'lose':
-      background(0);
+       levelOneMusic.stop();
+      levelTwoMusic.stop();
+      levelThreeMusic.stop();
+      image(youLose,0,0);
       fill('white');
       textSize(25);
-      text('You Died',width/2,height/2);
+      //text('You Died',width/2,height/2);
     break;
     
     case 'countDown1':
-      background(0);
+      image(countDownOne,0,0);
       fill('white');
       textSize(32);
       //only runs the first time through the coutdown
@@ -149,10 +248,10 @@ function draw() {
       }
       var flooredCount = floor((frameCount - count1Downtimer)/50);
       //this runs every time
-      if((3 - flooredCount) <= 0){
+      if((5 - flooredCount) <= 0){
         text("GO!",width/2,height/2);
       }else{
-        text(3 - flooredCount,width/2,height/2);
+        text(5 - flooredCount,width/2,height/2);
       }
       
       if(flooredCount > 3){
@@ -165,19 +264,20 @@ function draw() {
     break;
     
     case 'countDown2':
-        background(0);
+        image(countDownTwo,0,0);
+        levelOneMusic.stop();
       fill('white');
-      textSize(32);
+      textSize(40);
       //only runs the first time through the coutdown
       if(count2Downtimer === 0){
         count2Downtimer = frameCount;
       }
       var flooredCount = floor((frameCount - count2Downtimer)/50);
       //this runs every time
-      if((3 - flooredCount) <= 0){
+      if((5 - flooredCount) <= 0){
         text("GO!",SCENE_W/2,SCENE_H/2);
       }else{
-        text(3 - flooredCount,SCENE_W/2,SCENE_H/2);
+        text(5 - flooredCount,SCENE_W/2,SCENE_H/2);
       }
       
       if(flooredCount > 3){
@@ -190,19 +290,20 @@ function draw() {
     break;
     
     case 'countDown3':
-          background(0);
+          image(countDownThree,0,0);
+          levelTwoMusic.stop();
       fill('white');
-      textSize(32);
+      textSize(40);
       //only runs the first time through the coutdown
       if(count3Downtimer === 0){
         count3Downtimer = frameCount;
       }
       var flooredCount = floor((frameCount - count3Downtimer)/50);
       //this runs every time
-      if((3 - flooredCount) <= 0){
+      if((5 - flooredCount) <= 0){
         text("GO!",SCENE_W/2,SCENE_H/2);
       }else{
-        text(3 - flooredCount,SCENE_W/2,SCENE_H/2);
+        text(5 - flooredCount,SCENE_W/2,SCENE_H/2);
       }
       
       if(flooredCount > 3){
@@ -236,16 +337,29 @@ function draw() {
   function keyTyped(){
     if(key === 'x'){
       gameState = 'countDown1';
+            title.stop();
+       levelOneMusic.loop();
     }
+    
+    
+    
 }
 
  function keyPressed(){
     
   //limit the hero movements
   if(key === 'D'){
+     //start right turn animation
+    hero.changeAnimation("right");
+    //start at the beginning
+    hero.animation.changeFrame(0);
     hero.setSpeed(heroSpeed,0);
   } 
   else if (key === 'A') {
+    //start the left turn animation
+    hero.changeAnimation("left");
+    //start at the beginnning
+    hero.animation.changeFrame(0);
     hero.setSpeed(heroSpeed,180);
   } 
   else if (key === 'W') {
@@ -270,5 +384,6 @@ function mouseClicked(){
       bullet.life = 40;
       //adding bullet to the group bullets
       bullets.add(bullet);
+      shootSound.play();
   }
 }

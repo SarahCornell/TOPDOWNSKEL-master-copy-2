@@ -9,8 +9,6 @@ function levelTwo(){
     var ypos = random(SCENE_H);
     //print(ypos);
     var enemy = createSprite(random(xpos),random(ypos),100,100);
-      //set speed and direction of enemy
-     // enemy.setSpeed(4,random(20),random(100));
       //make the enemy disapear after x amout of frames
       enemy.life = 1000;
       //health slot
@@ -18,37 +16,52 @@ function levelTwo(){
       enemy.setCollider('rectangle',0,0,250,150);
       enemy.addAnimation('batFriend',batFriendAnimation);
       //adding enemy to the group enemies
-      enemies.add(enemy);
+      enemiesTwo.add(enemy);
       enemy.attractionPoint(5, hero.position.x,hero.position.y);
       //enemy.debug = true;
   }
+  
+  
+     //are we turning left?
+ //are we done turning left?
+ if(hero.getAnimationLabel() == "left" && hero.animation.getFrame() === hero.animation.getLastFrame()){
+    hero.changeAnimation("idle");
+    //start at the beginning
+    hero.animation.changeFrame(0);
+  }
+  //are we turning right?
+  //are we done turning right?
+   if(hero.getAnimationLabel() == "right" && hero.animation.getFrame() === hero.animation.getLastFrame()){
+    hero.changeAnimation("idle");
+    //start at the beginning
+    hero.animation.changeFrame(0);
+  }
+  
+  
    //Bouncing!
-  for(var i = 0;i < enemies.length;i++){
+  for(var i = 0;i < enemiesTwo.length;i++){
     
-     if (enemies[i].velocity.x > 0){
-      enemies[i].mirrorX(-1);
+     if (enemiesTwo[i].velocity.x > 0){
+      enemiesTwo[i].mirrorX(-1);
     }else{
-      enemies[i].mirrorX(1);
+      enemiesTwo[i].mirrorX(1);
     }
     
-    if(enemies[i].position.x > SCENE_W || enemies[i].position.x < 0){
-      enemies[i].velocity.x *= -1;
+    if(enemiesTwo[i].position.x > SCENE_W || enemiesTwo[i].position.x < 0){
+      enemiesTwo[i].velocity.x *= -1;
     }
-    if(enemies[i].position.y > SCENE_H || enemies[i].position.y < 0){
-      enemies[i].velocity.y *= -1;
+    if(enemiesTwo[i].position.y > SCENE_H || enemiesTwo[i].position.y < 0){
+      enemiesTwo[i].velocity.y *= -1;
   }
 }    
     
   //test for overlap
-  enemies.overlap(bullets,enemyHit);
+  enemiesTwo.overlap(bullets,enemyHitTwo);
   //did the enemy hit the hero?
-  enemies.overlap(hero,heroHit);
+  enemiesTwo.overlap(hero,heroHit);
   
-  
-  randomSeed(2);
-  for(var i = 0;i < 100; i++){
-    ellipse(random(1800),random(1000),50,50);
-  }
+
+
 randomSeed(frameCount);
 
   
@@ -62,7 +75,15 @@ randomSeed(frameCount);
   camera.position.x = hero.position.x;
   camera.position.y = hero.position.y;
   
+ image(levelTwobg,0,0);
  
+    /* fill('white');
+  textSize(100);
+  //score on screen
+  text(+score,110,100);
+  //health on screen
+  text(+heroHealth,130,55);
+  */
   
   //shadow using p5 drawing
   noStroke();
