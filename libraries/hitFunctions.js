@@ -1,5 +1,6 @@
 //only runs if something is hit
 //if an enemy is hit it will remove the bullet and the enemy
+
 //THIS IS WORMY
 function enemyHit(enemy,bullet){
   
@@ -128,7 +129,6 @@ function heroHit(enemy,hero){
   hero.shapeColor = 'red';
   
   if (heroHealth <= 1){
-    //heroDeath.play();
     gameState = 'lose';
     loseMusic.loop();
   }
